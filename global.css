@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* - Marine blue: hsl(213, 96%, 18%)
+- Purplish blue: hsl(243, 100%, 62%)
+- Pastel blue: hsl(228, 100%, 84%)
+- Light blue: hsl(206, 94%, 87%)
+- Strawberry red: hsl(354, 84%, 57%)
+
+### Neutral
+
+- Cool gray: hsl(231, 11%, 63%)
+- Light gray: hsl(229, 24%, 87%)
+- Magnolia: hsl(217, 100%, 97%)
+- Alabaster: hsl(231, 100%, 99%)
+- White: hsl(0, 0%, 100%) */
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-weight: 400;
+  src: local('MyFont'), url(src/assets/fonts/Ubuntu-Regular.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-weight: 600;
+  src: local('MyFont'), url(src/assets/fonts/Ubuntu-Medium.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-weight: 900;
+  src: local('MyFont'), url(src/assets/fonts/Ubuntu-Bold.ttf) format('ttf');
+}
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  @apply bg-light-gray;
+}
+
+form > label {
+  @apply block text-marine-blue
+}
+
+form > input {
+  @apply border border-light-gray font-semibold p-2 rounded mb-4 w-full text-marine-blue placeholder-cool-gray focus:outline-purplish-blue
+}
+
+
+h3 {
+  @apply text-marine-blue text-3xl font-black mb-2
+}
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.main {
+  display: flex;
+  min-width: 60rem;
+  min-height: 38rem;
+}
+
+.main >  * {
+  flex: 2;
+}
+
+.form-transition {
+  @apply py-8 px-24
+}
+
+.form-container {
+  background: url(src/assets/images/bg-sidebar-desktop.svg) no-repeat;
+  background-size: contain;
+  flex: 1;
+}
+
+.step-circle {
+  border-radius: 50%;
+}
+
+.active-step {
+  @apply bg-light-blue text-marine-blue border-0
+}
+
+.next-step-btn {
+  @apply bg-marine-blue text-white w-28 h-11 rounded ml-auto hover:bg-purplish-blue transition-colors
+}
+
+.go-back-btn {
+  @apply text-cool-gray font-semibold hover:text-marine-blue transition-colors
+}
+
+.confirm-btn {
+  @apply bg-purplish-blue text-white w-28 h-11 rounded ml-auto hover:bg-opacity-70 transition-colors
+}
+
+form > input.error {
+  @apply border-strawberry-red
+}
+
+.plan-box {
+  @apply hover:border-purplish-blue transition-colors cursor-pointer
+}
+
+.active-plan {
+  @apply bg-light-blue border-purplish-blue
+}
+
+.active-add-on {
+  @apply bg-light-blue border-purplish-blue
+}
+
+.checked-add-on {
+  background: hsl(243, 100%, 62%) url(src/assets/images/icon-checkmark.svg) no-repeat center;
+  background-size: contain;
+}
+
+.summary-add-on-box:not(:nth-last-child()) {
+  @apply mb-2
+}
